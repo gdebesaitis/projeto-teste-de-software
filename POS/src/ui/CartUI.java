@@ -652,8 +652,11 @@ public class CartUI extends javax.swing.JPanel {
         int selectedRowIndex = productsTable.getSelectedRow();
         if (selectedRowIndex != -1) {
             ProductDTO selectedProduct = productsList.get(selectedRowIndex);
-            if (selectedProduct.getStockQuantity() <= 0) {
-                JOptionPane.showMessageDialog(this, "Operation blocked: Product out of stock!", "Business Rule", JOptionPane.WARNING_MESSAGE);
+            Response validationResponse = new Response();
+            double qtdSolicitada = Double.parseDouble(quantity.getText());
+            model.validators.CommonValidator.validateStock(selectedProduct.getStockQuantity(), qtdSolicitada, validationResponse);
+            if (!validationResponse.isSuccessfull()) {
+                JOptionPane.showMessageDialog(this, validationResponse.getErrorMessages(), "Business Rule", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             DefaultTableModel cartTableModel = (DefaultTableModel) cartTable.getModel();
