@@ -6,7 +6,7 @@ import model.dto.UserDTO;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Teste DALManager - Estritamente conforme requisitos.
+ * Teste DALManager
  */
 public class DALManagerConnectionTest {
     

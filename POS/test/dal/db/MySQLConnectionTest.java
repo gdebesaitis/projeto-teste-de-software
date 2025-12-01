@@ -5,7 +5,7 @@ import java.sql.Connection;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Teste de Conexão - Estritamente conforme requisitos.
+ * Teste de Conexão - 	
  */
 public class MySQLConnectionTest {
     
