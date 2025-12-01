@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="src" path="POS/src"/>
+	<classpathentry kind="src" path="POS/test"/>
+	<classpathentry kind="lib" path="external-lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="external-lib/flatlaf-3.1.1.jar"/>
+	<classpathentry kind="lib" path="external-lib/glasspane-popup-2.0.1.jar"/>
+	<classpathentry kind="lib" path="external-lib/itextpdf-5.5.13.3.jar"/>
+	<classpathentry kind="lib" path="external-lib/javaparser-1.0.11.jar"/>
+	<classpathentry kind="lib" path="external-lib/jdatepicker-2.0.3.jar"/>
+	<classpathentry kind="lib" path="external-lib/jfreechart-1.5.4.jar"/>
+	<classpathentry kind="lib" path="external-lib/jgoodies-common-1.8.0.jar"/>
+	<classpathentry kind="lib" path="external-lib/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="external-lib/miglayout-4.0.jar"/>
+	<classpathentry kind="lib" path="external-lib/mysql-connector-j-8.0.32.jar"/>
+	<classpathentry kind="lib" path="external-lib/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="external-lib/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="external-lib/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="external-lib/RojeruSan.parte1.jar"/>
+	<classpathentry kind="lib" path="external-lib/RSTableMetro.jar"/>
+	<classpathentry kind="lib" path="external-lib/TimingFramework-0.55.jar"/>
+	<classpathentry kind="lib" path="external-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
