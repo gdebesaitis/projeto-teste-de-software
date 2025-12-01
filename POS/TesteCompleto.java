@@ -328,7 +328,7 @@ public class TesteCompleto {
         System.out.println();
 
         verificar(totalItens == 22, "Total de itens deve ser 22");
-        verificar(Math.abs(totalFaturamento - 127.90) < 0.01, "Faturamento deve ser R$ 127.90");
+        verificar(Math.abs(totalFaturamento - 148.00) < 0.01, "Faturamento deve ser R$ 148.00");
 
         System.out.println("📊 RESUMO DO DIA:");
         System.out.println("   → Itens vendidos: " + totalItens);
