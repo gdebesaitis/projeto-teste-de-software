@@ -652,6 +652,13 @@ public class CartUI extends javax.swing.JPanel {
         int selectedRowIndex = productsTable.getSelectedRow();
         if (selectedRowIndex != -1) {
             ProductDTO selectedProduct = productsList.get(selectedRowIndex);
+            Response validationResponse = new Response();
+            double qtdSolicitada = Double.parseDouble(quantity.getText());
+            model.validators.CommonValidator.validateStock(selectedProduct.getStockQuantity(), qtdSolicitada, validationResponse);
+            if (!validationResponse.isSuccessfull()) {
+                JOptionPane.showMessageDialog(this, validationResponse.getErrorMessages(), "Business Rule", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
             DefaultTableModel cartTableModel = (DefaultTableModel) cartTable.getModel();
             Object[] rowData = {selectedProduct.getProductName(), selectedProduct.getPrice(), quantity.getText(), selectedProduct.getPrice() * Integer.parseInt(quantity.getText())};
             cartTableModel.addRow(rowData);
