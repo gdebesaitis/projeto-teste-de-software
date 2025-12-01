@@ -22,9 +22,11 @@ public class POS {
             UIManager.setLookAndFeel( new FlatLightLaf());
         } catch (Exception e) {
            
+
         }
        new LoginUI().setVisible(true);
       
     }
 
 }
+
