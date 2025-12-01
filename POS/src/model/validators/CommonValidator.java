@@ -62,7 +62,7 @@ public class CommonValidator {
     
     private static void isValidPrice(double price, Response response) {
         if (price < 0) {
-            response.messagesList.add(new Message("Price is not valid, provide positive value.", MessageType.Error));
+            response.messagesList.add(new Message("Invalid price: Price cannot be negative, provide positive value.", MessageType.Error));
         }
     }
 }
