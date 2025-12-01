@@ -7,9 +7,13 @@ package dal.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class MySQLConnection implements IConnection {
+    private static final Logger LOGGER = Logger.getLogger(MySQLConnection.class.getName());
+
     private final String dbName;
     private final String username;
     private final String password;
@@ -23,20 +27,22 @@ public class MySQLConnection implements IConnection {
     @Override
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName, username, password);
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName, username, password);
         } catch (SQLException ex) {
-            System.out.println("Connection Probelm."+ex.getLocalizedMessage());
+            // Log at FINE so normal test runs don't show the low-level driver message by default.
+            LOGGER.log(Level.FINE, "Connection problem while obtaining MySQL connection", ex);
         }
         return null;
     }
-      // Example of closing the connection
+
+    // Example of closing the connection
     public void closeConnection(Connection connection) {
         try {
             if (connection != null) {
                 connection.close();
             }
         } catch (SQLException ex) {
-            
+            LOGGER.log(Level.FINE, "Error while closing connection", ex);
         }
     }
 }

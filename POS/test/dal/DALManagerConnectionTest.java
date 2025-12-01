@@ -90,7 +90,7 @@ public class DALManagerConnectionTest {
      */
     @Test
     @DisplayName("Teste 2: DALManager trata corretamente MySQL offline")
-    @Disabled("Requer MySQL offline ou modificação manual - Execute manualmente quando necessário")
+    //@Disabled("Requer MySQL offline ou modificação manual - Execute manualmente quando necessário")
     public void testDALManagerWithOfflineMySQL() {
         // INSTRUÇÕES:
         // 1. Desligue o MySQL: net stop MySQL80 (Windows) ou sudo systemctl stop mysql (Linux)
@@ -141,7 +141,7 @@ public class DALManagerConnectionTest {
      */
     @Test
     @DisplayName("Teste 3: DALManager trata corretamente falha de autenticação")
-    @Disabled("Requer modificação manual das credenciais - Execute manualmente quando necessário")
+    //@Disabled("Requer modificação manual das credenciais - Execute manualmente quando necessário")
     public void testDALManagerWithWrongCredentials() {
         // INSTRUÇÕES:
         // 1. Abra DALManager.java
@@ -182,7 +182,7 @@ public class DALManagerConnectionTest {
      */
     @Test
     @DisplayName("Teste 4: Operações de escrita tratam erro de conexão")
-    @Disabled("Requer MySQL offline - Execute manualmente quando necessário")
+    //@Disabled("Requer MySQL offline - Execute manualmente quando necessário")
     public void testDALManagerWriteOperationsWithConnectionError() {
         // Arrange
         dalManager = new DALManager();
@@ -213,7 +213,7 @@ public class DALManagerConnectionTest {
      */
     @Test
     @DisplayName("Teste 5: Sistema permanece estável após múltiplas falhas")
-    @Disabled("Requer MySQL offline - Execute manualmente quando necessário")
+   // @Disabled("Requer MySQL offline - Execute manualmente quando necessário")
     public void testMultipleFailedOperations() {
         // Arrange
         dalManager = new DALManager();
@@ -243,7 +243,7 @@ public class DALManagerConnectionTest {
      */
     @Test
     @DisplayName("Teste 6: Mensagens de erro são amigáveis e informativas")
-    @Disabled("Requer MySQL offline - Execute manualmente quando necessário")
+    //@Disabled("Requer MySQL offline - Execute manualmente quando necessário")
     public void testErrorMessageQuality() {
         // Arrange
         dalManager = new DALManager();

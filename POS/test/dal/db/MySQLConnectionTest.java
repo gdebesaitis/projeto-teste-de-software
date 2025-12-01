@@ -36,7 +36,7 @@ public class MySQLConnectionTest {
     @DisplayName("Teste 1: Conexão bem-sucedida com credenciais corretas e MySQL ativo")
     public void testSuccessfulConnection() {
         // Arrange
-        mySQLConnection = new MySQLConnection("pos", "root", "Admin123$");
+        mySQLConnection = new MySQLConnection("pos", "root", "12345");
         
         // Act
         Connection connection = mySQLConnection.getConnection();
@@ -75,7 +75,7 @@ public class MySQLConnectionTest {
      * - Mensagem de erro é exibida no console
      * 
      * NOTA: Para testar com MySQL realmente offline, altere o construtor
-     * para usar "pos", "root", "Admin123$" e desligue o serviço MySQL
+     * para usar "pos", "root", "12345" e desligue o serviço MySQL
      */
     @Test
     @DisplayName("Teste 2: Falha de conexão quando MySQL está offline")
