@@ -74,4 +74,45 @@ public class SystemBusinessRulesTest {
         
         System.out.println("✓ Teste 1 PASSOU: Sistema rejeitou corretamente o valor -10.0");
     }
+    
+    /**
+     * Teste 2: Bloqueio de Venda com Estoque Zero
+     * * Pré-condições:
+     * - Produto existe no banco de dados
+     * - Quantidade em estoque é 0.0
+     * * Passos:
+     * 1. Simular um cenário de venda
+     * 2. Definir o estoque atual do produto como 0.0
+     * 3. Tentar adicionar 1 item ao carrinho
+     * 4. Validar a operação usando o CommonValidator
+     * * Resultado Esperado:
+     * - O sistema deve bloquear a operação (isSuccessfull = false)
+     * - Deve retornar mensagem "Product out of stock"
+     */
+    @Test
+    public void testVendaEstoqueZero() {
+        // Arrange
+        double estoqueAtual = 0.0; // Simula produto esgotado
+        double quantidadeDesejada = 1.0;
+        Response responseValidacao = new Response();
+
+        // Act
+        // Chamamos o método estático que criamos no CommonValidator
+        model.validators.CommonValidator.validateStock(estoqueAtual, quantidadeDesejada, responseValidacao);
+
+        // Assert
+        assertFalse("Não deve permitir venda se estoque for 0", responseValidacao.isSuccessfull());
+        
+        boolean encontrouErroEstoque = false;
+        for (Message msg : responseValidacao.messagesList) {
+            // Verifica se a mensagem contém "out of stock"
+            if (msg.message.contains("out of stock")) {
+                encontrouErroEstoque = true;
+                break;
+            }
+        }
+        
+        assertTrue("Deve retornar mensagem de erro de estoque zero", encontrouErroEstoque);
+        System.out.println("✓ Teste 2 PASSOU: Sistema bloqueou venda de produto com estoque 0");
+    }
 }
