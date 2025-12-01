@@ -21,6 +21,8 @@ public class CommonValidator {
         } else if (obj instanceof SupplierDTO supplierDTO) {
             isValidName(supplierDTO.getName(), objResponse);
             isValildPhoneNo(supplierDTO.getPhoneNumber(), objResponse);
+        } else if (obj instanceof model.dto.ProductDTO productDTO) {
+            isValidPrice(productDTO.getPrice(), objResponse);
         }
     }
 
@@ -57,5 +59,10 @@ public class CommonValidator {
             return;
         }
     }
-
+    
+    private static void isValidPrice(double price, Response response) {
+        if (price < 0) {
+            response.messagesList.add(new Message("Price is not valid, provide positive value.", MessageType.Error));
+        }
+    }
 }
