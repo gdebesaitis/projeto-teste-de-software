@@ -38,7 +38,7 @@ public class SystemPerformanceTest {
     @BeforeAll
     public static void seedDatabase() {
         System.out.println("--- Preparando Teste de Carga (Produtos) ---");
-        MySQLConnection db = new MySQLConnection("pos", "root", "Admin123$"); // Confirme a senha do seu banco
+        MySQLConnection db = new MySQLConnection("pos", "root", "12345");
         Connection conn = db.getConnection();
 
         if (conn != null) {
